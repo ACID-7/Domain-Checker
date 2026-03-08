@@ -145,14 +145,14 @@ function RegistrarModal({ domain, onClose }) {
             onClick={onClose}
             style={{
               background:"#ffffff08", border:"1px solid #ffffff12",
-              color:"#666", borderRadius:9, width:36, height:36,
+              color:"#888", borderRadius:9, width:36, height:36,
               fontSize:18, display:"flex", alignItems:"center", justifyContent:"center",
             }}
           >×</button>
         </div>
 
-        <p style={{ fontSize:13, color:"#505068", marginBottom:20, fontFamily:"'Outfit',sans-serif", fontWeight:400, lineHeight:1.5 }}>
-          Pick a registrar — you'll be redirected directly to the search page for <strong style={{ color:"#888", fontWeight:600 }}>{domain}</strong>
+        <p style={{ fontSize:13, color:"#707088", marginBottom:20, fontFamily:"'Outfit',sans-serif", fontWeight:400, lineHeight:1.5 }}>
+          Pick a registrar — you'll be redirected directly to the search page for <strong style={{ color:"#aaa", fontWeight:600 }}>{domain}</strong>
         </p>
 
         {/* registrar list */}
@@ -190,17 +190,17 @@ function RegistrarModal({ domain, onClose }) {
                 <div style={{ fontFamily:"'Outfit',sans-serif", fontWeight:700, fontSize:15, color:"#fff", marginBottom:2 }}>
                   {r.name}
                 </div>
-                <div style={{ fontFamily:"'DM Mono',monospace", fontSize:11, color:"#404058" }}>
+                <div style={{ fontFamily:"'DM Mono',monospace", fontSize:11, color:"#606078" }}>
                   {r.tagline}
                 </div>
               </div>
 
-              <span style={{ color:"#2a2a40", fontSize:16 }}>→</span>
+              <span style={{ color:"#5a5a70", fontSize:16 }}>→</span>
             </button>
           ))}
         </div>
 
-        <p style={{ textAlign:"center", marginTop:18, fontSize:10, color:"#1e1e30", fontFamily:"'DM Mono',monospace", letterSpacing:"1px" }}>
+        <p style={{ textAlign:"center", marginTop:18, fontSize:10, color:"#505068", fontFamily:"'DM Mono',monospace", letterSpacing:"1px" }}>
           PRESS ESC OR CLICK OUTSIDE TO CLOSE
         </p>
       </div>
@@ -250,33 +250,33 @@ function DomainRow({ r, inputName, index, onRegister }) {
         <div style={{ flex:1 }}>
           <div style={{ display:"flex", alignItems:"center", gap:9, flexWrap:"wrap" }}>
             <span style={{ fontFamily:"'Outfit',sans-serif", fontWeight:800, fontSize:18, letterSpacing:"-0.4px" }}>
-              <span style={{ color: r.available ? "#d8d8f0" : "#2e2e50" }}>{slug}</span>
+              <span style={{ color: r.available ? "#e0e0f5" : "#6a6a8a" }}>{slug}</span>
               <span style={{ color: r.available ? "#00ff88" : "#ff4466" }}>{r.ext}</span>
             </span>
             {r.popular && (
               <span style={{
-                fontSize:9, letterSpacing:"1.5px", color:"#555",
+                fontSize:9, letterSpacing:"1.5px", color:"#888",
                 background:"#ffffff06", border:"1px solid #1c1c2e",
                 borderRadius:4, padding:"2px 7px",
                 fontFamily:"'DM Mono',monospace",
               }}>POPULAR</span>
             )}
           </div>
-          <div style={{ fontSize:12, color:"#363650", marginTop:3, fontFamily:"'DM Mono',monospace", display:"flex", alignItems:"center", gap:8 }}>
+          <div style={{ fontSize:12, color:"#6a6a8a", marginTop:3, fontFamily:"'DM Mono',monospace", display:"flex", alignItems:"center", gap:8 }}>
             <span>{r.label}</span>
-            <span style={{ color:"#2a2a48" }}>·</span>
+            <span style={{ color:"#5a5a78" }}>·</span>
             <a
               href={r.siteUrl(slug + r.ext)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={e => e.stopPropagation()}
               style={{
-                color: r.available ? "#00ff8860" : "#363650",
+                color: r.available ? "#00ff88a0" : "#6a6a8a",
                 textDecoration:"none",
                 transition:"color 0.15s",
               }}
-              onMouseEnter={e => e.currentTarget.style.color = r.available ? "#00ff88" : "#666"}
-              onMouseLeave={e => e.currentTarget.style.color = r.available ? "#00ff8860" : "#363650"}
+              onMouseEnter={e => e.currentTarget.style.color = r.available ? "#00ff88" : "#888"}
+              onMouseLeave={e => e.currentTarget.style.color = r.available ? "#00ff88a0" : "#6a6a8a"}
             >{r.site}</a>
           </div>
         </div>
@@ -308,7 +308,7 @@ function DomainRow({ r, inputName, index, onRegister }) {
             </button>
           </>
         ) : (
-          <span style={{ fontFamily:"'DM Mono',monospace", fontSize:11, color:"#ff446645", letterSpacing:"1px" }}>TAKEN</span>
+          <span style={{ fontFamily:"'DM Mono',monospace", fontSize:11, color:"#ff446690", letterSpacing:"1px" }}>TAKEN</span>
         )}
       </div>
     </div>
@@ -317,7 +317,7 @@ function DomainRow({ r, inputName, index, onRegister }) {
 
 function FilterBtn({ label, colorKey, active, onClick }) {
   const m = {
-    all:       { a:"#ffffff15", b:"#3a3a5a", t:"#ccc"    },
+    all:       { a:"#ffffff15", b:"#3a3a5a", t:"#ddd"    },
     available: { a:"#00ff8818", b:"#00ff8838", t:"#00ff88" },
     taken:     { a:"#ff446618", b:"#ff446638", t:"#ff4466" },
   };
@@ -325,8 +325,8 @@ function FilterBtn({ label, colorKey, active, onClick }) {
   return (
     <button onClick={onClick} style={{
       background: active ? c.a : "transparent",
-      border:`1px solid ${active ? c.b : "#1a1a30"}`,
-      color: active ? c.t : "#3a3a5a",
+      border:`1px solid ${active ? c.b : "#2a2a50"}`,
+      color: active ? c.t : "#6a6a8a",
       borderRadius:7, padding:"5px 14px",
       fontFamily:"'DM Mono',monospace", fontSize:10,
       letterSpacing:"1.5px", textTransform:"uppercase", transition:"all 0.16s",
@@ -373,7 +373,7 @@ export default function App() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
         *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-        input::placeholder { color:#252540; font-family:'Outfit',sans-serif; font-weight:400; }
+        input::placeholder { color:#505070; font-family:'Outfit',sans-serif; font-weight:400; }
         input:focus { outline:none; }
         ::-webkit-scrollbar { width:3px; }
         ::-webkit-scrollbar-track { background:#0a0a18; }
@@ -425,7 +425,7 @@ export default function App() {
               animation:"shimmer 3s linear infinite",
             }}>DOMAIN NAME</span>
           </h1>
-          <p style={{ color:"#4a4a6a", fontSize:15, fontWeight:400, letterSpacing:"0.2px" }}>
+          <p style={{ color:"#7a7a9a", fontSize:15, fontWeight:400, letterSpacing:"0.2px" }}>
             Type any company name — check availability across {EXTENSIONS.length} extensions instantly
           </p>
         </div>
@@ -462,7 +462,7 @@ export default function App() {
             {input && (
               <button onClick={() => setInput("")} style={{
                 background:"#10102a",border:"1px solid #20203a",
-                color:"#444",borderRadius:8,width:36,height:36,
+                color:"#777",borderRadius:8,width:36,height:36,
                 fontSize:18,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,
               }}>×</button>
             )}
@@ -472,17 +472,17 @@ export default function App() {
         {/* Suggestions */}
         {!input && (
           <div style={{ animation:"fadeUp 0.5s ease 0.2s both", marginBottom:44 }}>
-            <p style={{ color:"#22223a",fontSize:11,letterSpacing:"2px",marginBottom:12,fontFamily:"'DM Mono',monospace" }}>TRY THESE →</p>
+            <p style={{ color:"#606078",fontSize:11,letterSpacing:"2px",marginBottom:12,fontFamily:"'DM Mono',monospace" }}>TRY THESE →</p>
             <div style={{ display:"flex",flexWrap:"wrap",gap:8 }}>
               {SUGGESTIONS.map(s => (
                 <button key={s} onClick={() => setInput(s)} style={{
                   background:"#0d0d20",border:"1px solid #18183a",
-                  color:"#505068",borderRadius:9,padding:"8px 18px",
+                  color:"#707088",borderRadius:9,padding:"8px 18px",
                   fontFamily:"'Outfit',sans-serif",fontWeight:600,fontSize:13,
                   transition:"all 0.16s",
                 }}
                 onMouseEnter={e=>{ e.target.style.borderColor="#00ff8830"; e.target.style.color="#00ff88"; e.target.style.background="#00ff8806"; }}
-                onMouseLeave={e=>{ e.target.style.borderColor="#18183a"; e.target.style.color="#505068"; e.target.style.background="#0d0d20"; }}
+                onMouseLeave={e=>{ e.target.style.borderColor="#18183a"; e.target.style.color="#707088"; e.target.style.background="#0d0d20"; }}
                 >{s}</button>
               ))}
             </div>
@@ -539,14 +539,14 @@ export default function App() {
         {!input && !loading && (
           <div style={{ textAlign:"center",padding:"64px 0",animation:"fadeUp 0.5s ease 0.3s both" }}>
             <div style={{ fontSize:52,marginBottom:18,opacity:0.1 }}>⌕</div>
-            <p style={{ color:"#1c1c30",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"3px" }}>
+            <p style={{ color:"#606078",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"3px" }}>
               START TYPING TO CHECK DOMAINS
             </p>
           </div>
         )}
 
         {/* Footer */}
-        <div style={{ textAlign:"center",marginTop:48,fontFamily:"'DM Mono',monospace",fontSize:10,color:"#1a1a2e",letterSpacing:"1px",lineHeight:"1.9" }}>
+        <div style={{ textAlign:"center",marginTop:48,fontFamily:"'DM Mono',monospace",fontSize:10,color:"#505068",letterSpacing:"1px",lineHeight:"1.9" }}>
           ⚠ AVAILABILITY IS SIMULATED — VERIFY ON YOUR CHOSEN REGISTRAR BEFORE PURCHASING
         </div>
       </div>
