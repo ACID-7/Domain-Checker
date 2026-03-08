@@ -1,2 +1,2 @@
 # Domain-Checker
-🔍 Instant domain availability checker for IT &amp; software company names — search across 10 extensions with registrar links
+A fast, minimal domain availability checker built with React + Vite. Type any company name and instantly see availability across .com, .io, .dev, .co, .net, .ai, .app, .tech, .cloud, and .software. Click any available domain to choose from 6 major registrars — Namecheap, GoDaddy, Google Domains, Porkbun, Cloudflare, and Hover — and get redirected straight to the purchase page with your domain pre-filled.
