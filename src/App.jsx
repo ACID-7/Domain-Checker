@@ -12,7 +12,7 @@ const EXTENSIONS = [
   { ext: ".tech",     label: "Technology",              popular: false, site: "get.tech",        siteUrl: (d) => `https://get.tech/domain-registration?domain=${d}` },
   { ext: ".cloud",    label: "Cloud Services",          popular: false, site: "namecheap.com",   siteUrl: (d) => `https://www.namecheap.com/domains/registration/results/?domain=${d}` },
   { ext: ".software", label: "Software",                popular: false, site: "namecheap.com",   siteUrl: (d) => `https://www.namecheap.com/domains/registration/results/?domain=${d}` },
-  { ext: ".lk",       label: "Sri Lanka",               popular: false, site: "domains.nic.lk",  siteUrl: (d) => `https://domains.nic.lk` },
+  { ext: ".lk",       label: "Sri Lanka",               popular: false, site: "domains.lk",  siteUrl: (d) => `https://https://www.domains.lk/` },
 ];
 
 const REGISTRARS = [
@@ -65,11 +65,11 @@ const REGISTRARS = [
     supportedExtensions: [".com", ".io", ".co", ".net", ".app", ".dev"],
   },
   {
-    name: "NIC.LK (Official)",
+    name: "LK Doamin Official",
     icon: "🇱🇰",
     tagline: "Sri Lanka official registry",
     color: "#ff9933",
-    url: (d) => `https://domains.nic.lk`,
+    url: (d) => `https://www.domains.lk/`,
     supportedExtensions: [".lk"],
   },
 ];
