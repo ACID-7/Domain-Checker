@@ -1,0 +1,17 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  min-height: 100vh;
+  background: #05050f;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
